@@ -1,9 +1,40 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://v14c8rjgawhm"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=9 format=3 uid="uid://v14c8rjgawhm"]
 
-[ext_resource type="Script" path="res://DialogueSystem/Scripts/EmotionSprite.gd" id="1_bvmba"]
-[ext_resource type="Script" path="res://DialogueSystem/Scripts/CharacterData.gd" id="1_hfk62"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/EmotionSprite.gd" id="1_5txfv"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/CharacterData.gd" id="2_jtpum"]
+
+[sub_resource type="Resource" id="Resource_x6h6l"]
+script = ExtResource("1_5txfv")
+Emotion = 0
+Sprite = "res://Characters/Froggo/happy.png"
+
+[sub_resource type="Resource" id="Resource_10sa0"]
+script = ExtResource("1_5txfv")
+Emotion = 2
+Sprite = "res://Characters/Froggo/sad.png"
+
+[sub_resource type="Resource" id="Resource_xyedo"]
+script = ExtResource("1_5txfv")
+Emotion = 3
+Sprite = "res://Characters/Froggo/angery.png"
+
+[sub_resource type="Resource" id="Resource_k75nd"]
+script = ExtResource("1_5txfv")
+Emotion = 4
+Sprite = "res://Characters/Froggo/surprised.png"
+
+[sub_resource type="Resource" id="Resource_gfti0"]
+script = ExtResource("1_5txfv")
+Emotion = 5
+Sprite = "res://Characters/Froggo/not_impressed.png"
+
+[sub_resource type="Resource" id="Resource_jvc1a"]
+script = ExtResource("1_5txfv")
+Emotion = 6
+Sprite = "res://Characters/Froggo/excited.png"
 
 [resource]
-script = ExtResource("1_hfk62")
-Name = ""
-Emotions = Array[ExtResource("1_bvmba")]([])
+script = ExtResource("2_jtpum")
+IconPath = "res://Characters/Froggo/main_character.png"
+Name = "Froggo"
+Emotions = Array[ExtResource("1_5txfv")]([SubResource("Resource_x6h6l"), SubResource("Resource_10sa0"), SubResource("Resource_xyedo"), SubResource("Resource_k75nd"), SubResource("Resource_gfti0"), SubResource("Resource_jvc1a")])

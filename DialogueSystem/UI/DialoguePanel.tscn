@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxn7snwc84yn2"]
+[gd_scene load_steps=7 format=3 uid="uid://bxn7snwc84yn2"]
 
 [ext_resource type="Texture2D" uid="uid://610upam11jk6" path="res://icon.svg" id="1_0iyra"]
+[ext_resource type="Script" path="res://DialogueSystem/UI/DialoguePanel.gd" id="1_5f4r4"]
+[ext_resource type="Script" path="res://DialogueSystem/UI/NameBubble.gd" id="3_663ly"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8c4mk"]
 font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_0jwkf"]
 font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_47800"]
+font_size = 30
 
 [node name="DialoguePanel" type="Control"]
 layout_mode = 3
@@ -15,8 +20,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5f4r4")
 
 [node name="Speaker" type="TextureRect" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 520)
 layout_mode = 1
 anchors_preset = 3
@@ -46,6 +53,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="NameBubble" type="Panel" parent="DialogueBubble"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,6 +66,7 @@ offset_right = 7.0
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_663ly")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="DialogueBubble/NameBubble"]
 layout_mode = 1
@@ -66,9 +75,11 @@ anchor_bottom = 1.0
 offset_left = 10.0
 offset_right = 250.0
 grow_vertical = 2
+dragger_visibility = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="DialogueBubble/NameBubble/HSplitContainer"]
+[node name="CharacterIcon" type="TextureRect" parent="DialogueBubble/NameBubble/HSplitContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,7 +87,8 @@ size_flags_vertical = 4
 texture = ExtResource("1_0iyra")
 expand_mode = 1
 
-[node name="Name" type="Label" parent="DialogueBubble/NameBubble/HSplitContainer"]
+[node name="CharacterName" type="Label" parent="DialogueBubble/NameBubble/HSplitContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
 text = "Froggy"
@@ -84,7 +96,8 @@ label_settings = SubResource("LabelSettings_8c4mk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Line" type="Label" parent="DialogueBubble"]
+[node name="DialogueLine" type="Label" parent="DialogueBubble"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(550, 0)
 layout_mode = 1
 anchors_preset = 13
@@ -101,7 +114,40 @@ label_settings = SubResource("LabelSettings_0jwkf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SkipButton" type="TextureButton" parent="DialogueBubble"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = 22.0
+offset_right = 364.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_0iyra")
+texture_pressed = ExtResource("1_0iyra")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="DialogueBubble/SkipButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skip"
+label_settings = SubResource("LabelSettings_47800")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MainSpeaker" type="TextureRect" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 520)
 layout_mode = 1
 anchors_preset = 2
@@ -114,3 +160,11 @@ offset_bottom = -1.0
 grow_vertical = 0
 texture = ExtResource("1_0iyra")
 expand_mode = 3
+
+[node name="LineTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+
+[connection signal="button_down" from="DialogueBubble/SkipButton" to="." method="_on_skip_button_button_down"]
+[connection signal="button_up" from="DialogueBubble/SkipButton" to="." method="_on_skip_button_button_up"]
+[connection signal="timeout" from="LineTimer" to="." method="_on_line_timer_timeout"]

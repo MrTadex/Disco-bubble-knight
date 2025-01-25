@@ -1,16 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjxmhp4ejtq6q"]
+[gd_scene load_steps=5 format=3 uid="uid://cjxmhp4ejtq6q"]
 
 [ext_resource type="PackedScene" uid="uid://bxn7snwc84yn2" path="res://DialogueSystem/UI/DialoguePanel.tscn" id="1_3ku16"]
+[ext_resource type="Script" path="res://Managers/GameManager.gd" id="1_yo6pd"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/DialogueData.gd" id="2_xdh6p"]
+[ext_resource type="Resource" uid="uid://c0cm4ec7cdl7p" path="res://Chapters/Chapter1/Chapter1.tres" id="3_uqtwn"]
 
-[node name="Chapter1" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Chapter1" type="Node2D"]
+script = ExtResource("1_yo6pd")
+_flow = Array[ExtResource("2_xdh6p")]([ExtResource("3_uqtwn")])
 
 [node name="DialoguePanel" parent="." instance=ExtResource("1_3ku16")]
-layout_mode = 1
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="DialogueEnd" from="DialoguePanel" to="." method="StartNextState"]
