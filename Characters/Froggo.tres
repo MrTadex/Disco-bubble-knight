@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://v14c8rjgawhm"]
+
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/EmotionSprite.gd" id="1_bvmba"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/CharacterData.gd" id="1_hfk62"]
+
+[resource]
+script = ExtResource("1_hfk62")
+Name = ""
+Emotions = Array[ExtResource("1_bvmba")]([])

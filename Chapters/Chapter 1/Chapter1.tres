@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=7 format=3 uid="uid://c0cm4ec7cdl7p"]
+
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/LineData.gd" id="1_5644d"]
+[ext_resource type="Resource" uid="uid://v14c8rjgawhm" path="res://Characters/Froggo.tres" id="2_n1cy8"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/DialogueData.gd" id="2_tv2yp"]
+[ext_resource type="Resource" uid="uid://bnetvik1uh7xc" path="res://Characters/Bubbles.tres" id="3_60ahp"]
+
+[sub_resource type="Resource" id="Resource_pa3je"]
+script = ExtResource("1_5644d")
+Character = ExtResource("2_n1cy8")
+Line = "Hey sexy frog. What is your name?"
+Emotion = 0
+
+[sub_resource type="Resource" id="Resource_l58q0"]
+script = ExtResource("1_5644d")
+Character = ExtResource("3_60ahp")
+Line = "Emm... M.. My name is emm... Bubbles."
+Emotion = 0
+
+[resource]
+script = ExtResource("2_tv2yp")
+Lines = Array[ExtResource("1_5644d")]([SubResource("Resource_pa3je"), SubResource("Resource_l58q0")])
