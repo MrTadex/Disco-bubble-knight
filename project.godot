@@ -15,17 +15,8 @@ run/main_scene="res://Scenes/Chapter1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Signals="*res://Global/Objects/Signals.tscn"
-
 [display]
 
-<<<<<<< Updated upstream
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
-=======
-window/size/viewport_width=1000
-window/size/viewport_height=500
->>>>>>> Stashed changes
