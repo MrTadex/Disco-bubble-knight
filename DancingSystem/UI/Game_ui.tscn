@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://vfm7i2g4lv36"]
+
+[ext_resource type="Script" path="res://DancingSystem/Scripts/Game_ui.gd" id="1_qyep8"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qyep8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 82.0
+offset_bottom = 23.0
+text = "0 POINTS"
+
+[node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_top = 21.0
+offset_right = 86.0
+offset_bottom = 45.0
+text = "0 xCombo"
