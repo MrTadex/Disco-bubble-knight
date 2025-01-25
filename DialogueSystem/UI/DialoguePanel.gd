@@ -10,7 +10,6 @@ extends Control
 @onready var _lineTimer := %LineTimer
 
 # Local variables
-@export var LineTime:float = 5
 var _dialogue:DialogueData
 var _lineIndex:int = 0
 var _currentLine:LineData
@@ -56,10 +55,10 @@ func GetNextLine() -> void:
 				_mainSpeaker.visible = false
 				_speaker.visible = false
 		
-		_lineTimer.start(LineTime)
+		_lineTimer.start(_currentLine.NextLine)
 		
 		_lineTween = create_tween()
-		_lineTween.tween_property(_dialogueLine,"visible_ratio", 1, LineTime -1)
+		_lineTween.tween_property(_dialogueLine,"visible_ratio", 1, _currentLine.LineDuration)
 		
 	else:
 		# End of Dialogue

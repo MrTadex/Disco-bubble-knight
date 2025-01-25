@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxn7snwc84yn2"]
+[gd_scene load_steps=8 format=3 uid="uid://bxn7snwc84yn2"]
 
 [ext_resource type="Texture2D" uid="uid://610upam11jk6" path="res://icon.svg" id="1_0iyra"]
 [ext_resource type="Script" path="res://DialogueSystem/UI/DialoguePanel.gd" id="1_5f4r4"]
+[ext_resource type="Texture2D" uid="uid://fxkaq6obtujm" path="res://Characters/Froggo/not_impressed.png" id="2_cmt22"]
 [ext_resource type="Script" path="res://DialogueSystem/UI/NameBubble.gd" id="3_663ly"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8c4mk"]
@@ -22,6 +23,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5f4r4")
 
+[node name="MainSpeaker" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 520)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -680.0
+offset_right = 620.0
+offset_bottom = -160.0
+grow_vertical = 0
+texture = ExtResource("2_cmt22")
+expand_mode = 3
+
 [node name="Speaker" type="TextureRect" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 520)
@@ -37,20 +53,21 @@ offset_right = -100.0
 offset_bottom = -160.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("1_0iyra")
+texture = ExtResource("2_cmt22")
 expand_mode = 3
 
-[node name="DialogueBubble" type="Panel" parent="."]
-custom_minimum_size = Vector2(0, 160)
+[node name="DialogueBubble" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -256.0
-offset_bottom = -96.0
+offset_top = -230.0
 grow_horizontal = 2
 grow_vertical = 0
+texture = ExtResource("1_0iyra")
 
 [node name="NameBubble" type="Panel" parent="DialogueBubble"]
 unique_name_in_owner = true
@@ -61,9 +78,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -293.0
-offset_top = -146.0
+offset_top = -195.0
 offset_right = 7.0
-offset_bottom = -66.0
+offset_bottom = -115.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_663ly")
@@ -145,21 +162,6 @@ text = "Skip"
 label_settings = SubResource("LabelSettings_47800")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="MainSpeaker" type="TextureRect" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(450, 520)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = -521.0
-offset_right = 620.0
-offset_bottom = -1.0
-grow_vertical = 0
-texture = ExtResource("1_0iyra")
-expand_mode = 3
 
 [node name="LineTimer" type="Timer" parent="."]
 unique_name_in_owner = true
