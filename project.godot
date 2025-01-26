@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Signals="*res://Global/Objects/Signals.tscn"
+InputManager="*res://Managers/InputManager.gd"
+MusicManager="*res://Managers/MusicManager.gd"
 
 [display]
 

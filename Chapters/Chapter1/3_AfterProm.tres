@@ -1,0 +1,149 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=22 format=3 uid="uid://c6m6w4pgcmlcr"]
+
+[ext_resource type="AudioStream" uid="uid://gd66o6vbwmf4" path="res://Music/sexy thing.mp3" id="1_bhuta"]
+[ext_resource type="SpriteFrames" uid="uid://cvuq2nvvr5g7j" path="res://Backgrounds/DiscoBubble.tres" id="2_t6rxf"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/LineData.gd" id="3_v74bu"]
+[ext_resource type="Resource" uid="uid://v14c8rjgawhm" path="res://Characters/Froggo.tres" id="4_7cfpt"]
+[ext_resource type="Resource" uid="uid://bnetvik1uh7xc" path="res://Characters/Bubbles.tres" id="5_5a0wk"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/DialogueData.gd" id="6_7yigu"]
+
+[sub_resource type="Resource" id="Resource_pa3je"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("5_5a0wk")
+Location = "RIGHT"
+Line = "Oh no. What time is it?"
+Emotion = 4
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_l58q0"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "It's show time!!"
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_rx6xw"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "..."
+Emotion = 1
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_8ilqy"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "It's midnight."
+Emotion = 1
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_2ew0r"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("5_5a0wk")
+Location = "RIGHT"
+Line = "Whaaaat!!?!"
+Emotion = 4
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_e0gh2"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("5_5a0wk")
+Location = "RIGHT"
+Line = "I have to go."
+Emotion = 4
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_0poru"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "Nooo, the fun is just starting."
+Emotion = 2
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_2btmb"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("5_5a0wk")
+Location = "RIGHT"
+Line = "Bye! I will never forget you."
+Emotion = 2
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_gq6kv"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("5_5a0wk")
+Location = "RIGHT"
+Line = "*Runs away*"
+Emotion = 2
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_q5ioh"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "..."
+Emotion = 4
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_in48k"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "What did just happen?"
+Emotion = 4
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_xwgrq"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "DId i get diched?"
+Emotion = 2
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_jug4g"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "Nooo... that would never happen to me."
+Emotion = 2
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_xdrtn"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "She must have had a good reason."
+Emotion = 2
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_dbm4d"]
+script = ExtResource("3_v74bu")
+Character = ExtResource("4_7cfpt")
+Location = "LEFT"
+Line = "*Stands saddly alone on the dance floor*"
+Emotion = 2
+LineDuration = 3.0
+NextLine = 5.0
+
+[resource]
+script = ExtResource("6_7yigu")
+Background = ExtResource("2_t6rxf")
+Audio = ExtResource("1_bhuta")
+Lines = Array[ExtResource("3_v74bu")]([SubResource("Resource_pa3je"), SubResource("Resource_l58q0"), SubResource("Resource_rx6xw"), SubResource("Resource_8ilqy"), SubResource("Resource_2ew0r"), SubResource("Resource_e0gh2"), SubResource("Resource_0poru"), SubResource("Resource_2btmb"), SubResource("Resource_gq6kv"), SubResource("Resource_q5ioh"), SubResource("Resource_in48k"), SubResource("Resource_xwgrq"), SubResource("Resource_jug4g"), SubResource("Resource_xdrtn"), SubResource("Resource_dbm4d")])

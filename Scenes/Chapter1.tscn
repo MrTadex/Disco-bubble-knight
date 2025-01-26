@@ -1,18 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjxmhp4ejtq6q"]
+[gd_scene load_steps=11 format=3 uid="uid://cjxmhp4ejtq6q"]
 
 [ext_resource type="PackedScene" uid="uid://bxn7snwc84yn2" path="res://DialogueSystem/UI/DialoguePanel.tscn" id="1_3ku16"]
 [ext_resource type="Script" path="res://Managers/GameManager.gd" id="1_yo6pd"]
 [ext_resource type="Script" path="res://Managers/GameStates/StateBase.gd" id="2_vfpbx"]
-[ext_resource type="Resource" uid="uid://c0cm4ec7cdl7p" path="res://Chapters/Chapter1/Chapter1.tres" id="3_uqtwn"]
+[ext_resource type="Resource" uid="uid://c0cm4ec7cdl7p" path="res://Chapters/Chapter1/1_BeforeProm.tres" id="3_uqtwn"]
 [ext_resource type="Script" path="res://Managers/GameStates/DialogueState.gd" id="5_4jymu"]
+[ext_resource type="Resource" uid="uid://dut88u4sa6xg0" path="res://Chapters/Chapter1/2_LoveAtFirstSight.tres" id="5_alv4t"]
+[ext_resource type="Resource" uid="uid://c6m6w4pgcmlcr" path="res://Chapters/Chapter1/3_AfterProm.tres" id="6_bxa0y"]
 
 [sub_resource type="Resource" id="Resource_aj6v2"]
 script = ExtResource("5_4jymu")
 Dialogue = ExtResource("3_uqtwn")
 
+[sub_resource type="Resource" id="Resource_nhlg1"]
+script = ExtResource("5_4jymu")
+Dialogue = ExtResource("5_alv4t")
+
+[sub_resource type="Resource" id="Resource_0pcw3"]
+script = ExtResource("5_4jymu")
+Dialogue = ExtResource("6_bxa0y")
+
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_yo6pd")
-_flow = Array[ExtResource("2_vfpbx")]([SubResource("Resource_aj6v2")])
+_flow = Array[ExtResource("2_vfpbx")]([SubResource("Resource_aj6v2"), SubResource("Resource_nhlg1"), SubResource("Resource_0pcw3")])
 
 [node name="DialoguePanel" parent="." instance=ExtResource("1_3ku16")]
 unique_name_in_owner = true

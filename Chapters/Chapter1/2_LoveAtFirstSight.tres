@@ -1,0 +1,158 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=23 format=3 uid="uid://dut88u4sa6xg0"]
+
+[ext_resource type="AudioStream" uid="uid://gd66o6vbwmf4" path="res://Music/sexy thing.mp3" id="1_dq78c"]
+[ext_resource type="SpriteFrames" uid="uid://cvuq2nvvr5g7j" path="res://Backgrounds/DiscoBubble.tres" id="2_l3vl3"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/LineData.gd" id="3_peoji"]
+[ext_resource type="Resource" uid="uid://v14c8rjgawhm" path="res://Characters/Froggo.tres" id="4_3bfvk"]
+[ext_resource type="Resource" uid="uid://bnetvik1uh7xc" path="res://Characters/Bubbles.tres" id="5_ot3jp"]
+[ext_resource type="Script" path="res://DialogueSystem/Scripts/DialogueData.gd" id="5_si2d0"]
+
+[sub_resource type="Resource" id="Resource_pa3je"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "Look at that beauty ower there!"
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_l58q0"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "Let me shoot my shot..."
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_rx6xw"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "*Dances to her*"
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_8ilqy"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "Hey pretty!"
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_2ew0r"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "You caught my eye."
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_e0gh2"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "You sparkle like a diamond under a spotlight!"
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_0poru"]
+script = ExtResource("3_peoji")
+Character = ExtResource("5_ot3jp")
+Location = "RIGHT"
+Line = "*Giggles*"
+Emotion = 4
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_2btmb"]
+script = ExtResource("3_peoji")
+Character = ExtResource("5_ot3jp")
+Location = "RIGHT"
+Line = "Why, thank you!"
+Emotion = 0
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_gq6kv"]
+script = ExtResource("3_peoji")
+Character = ExtResource("5_ot3jp")
+Location = "RIGHT"
+Line = "My name is Bubbles"
+Emotion = 0
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_q5ioh"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "Cute"
+Emotion = 0
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_in48k"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "That's the same as the name of this disco."
+Emotion = 0
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_xwgrq"]
+script = ExtResource("3_peoji")
+Character = ExtResource("5_ot3jp")
+Location = "RIGHT"
+Line = "And what's yours?"
+Emotion = 0
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_jug4g"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "Everyone calls me Froggo, but you can call me tonight."
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_xdrtn"]
+script = ExtResource("3_peoji")
+Character = ExtResource("5_ot3jp")
+Location = "RIGHT"
+Line = "How about we just dance for now?"
+Emotion = 5
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_dbm4d"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "Yes, love the way your brain works."
+Emotion = 6
+LineDuration = 3.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_rkfmb"]
+script = ExtResource("3_peoji")
+Character = ExtResource("4_3bfvk")
+Location = "LEFT"
+Line = "Let's dance!"
+Emotion = 0
+LineDuration = 3.0
+NextLine = 5.0
+
+[resource]
+script = ExtResource("5_si2d0")
+Background = ExtResource("2_l3vl3")
+Audio = ExtResource("1_dq78c")
+Lines = Array[ExtResource("3_peoji")]([SubResource("Resource_pa3je"), SubResource("Resource_l58q0"), SubResource("Resource_rx6xw"), SubResource("Resource_8ilqy"), SubResource("Resource_2ew0r"), SubResource("Resource_e0gh2"), SubResource("Resource_0poru"), SubResource("Resource_2btmb"), SubResource("Resource_gq6kv"), SubResource("Resource_q5ioh"), SubResource("Resource_in48k"), SubResource("Resource_xwgrq"), SubResource("Resource_jug4g"), SubResource("Resource_xdrtn"), SubResource("Resource_dbm4d"), SubResource("Resource_rkfmb")])

@@ -1,12 +1,11 @@
 extends Control
 
 # Bounds
-@onready var _skipButton := %SkipButton
 @onready var _dialogueLine := %DialogueLine
 @onready var _nameBubble := %NameBubble
 @onready var _mainSpeaker := %MainSpeaker
 @onready var _speaker := %Speaker
-
+@onready var _background := %Background
 @onready var _lineTimer := %LineTimer
 
 # Local variables
@@ -19,8 +18,15 @@ var _lineTween : Tween
 #Signal
 signal DialogueEnd
 
+func _ready() -> void:
+	InputManager.SkipLine.connect(Skip)
+
 func StartDialogue(dialogue:DialogueData) -> void:
 	_dialogue = dialogue
+	_background.sprite_frames = _dialogue.Background
+	_background.play("Default")
+	MusicManager.PlaySong(_dialogue.Audio)
+	
 	_lineIndex = -1
 	GetNextLine()
 
@@ -35,16 +41,15 @@ func GetNextLine() -> void:
 		_nameBubble.SetSpeaker(_currentLine.Character)
 		
 		var spritePath = GetEmotion(_currentLine.Character, _currentLine.Emotion)
-		print(_currentLine.Location)
 		match(_currentLine.Location):
-			"LEFT": # Left
+			"LEFT":
 				if(spritePath != ""):
 					_mainSpeaker.texture = load(spritePath)
 					_mainSpeaker.visible = true
 				else:
 					_mainSpeaker.visible = false
 				_speaker.visible = false
-			"RIGHT": # Right
+			"RIGHT":
 				if(spritePath != ""):
 					_speaker.texture = load(spritePath)
 					_speaker.visible = true
@@ -71,12 +76,8 @@ func Reset() -> void:
 	_dialogueLine.visible_ratio = 0
 	_mainSpeaker.texture = null
 	_speaker.texture = null
-
-func _on_skip_button_button_down() -> void:
-	_skipButton.self_modulate = Color.GRAY
-
-func _on_skip_button_button_up() -> void:
-	_skipButton.self_modulate = Color.WHITE
+	
+func Skip() -> void:
 	GetNextLine()
 	
 func _on_line_timer_timeout() -> void:

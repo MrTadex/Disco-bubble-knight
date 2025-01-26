@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cvuq2nvvr5g7j"]
+
+[ext_resource type="Texture2D" uid="uid://bd3pjg83t7s3g" path="res://Backgrounds/DiscoBubble/DiscoClub1.png" id="1_lf1yb"]
+[ext_resource type="Texture2D" uid="uid://c7ur54glu70u" path="res://Backgrounds/DiscoBubble/DiscoClub2.png" id="2_s7ce7"]
+[ext_resource type="Texture2D" uid="uid://dkn2yt0ksg62g" path="res://Backgrounds/DiscoBubble/DiscoClub3.png" id="3_dj50t"]
+[ext_resource type="Texture2D" uid="uid://q3fws7kpnaro" path="res://Backgrounds/DiscoBubble/DiscoClub4.png" id="4_5an7e"]
+[ext_resource type="Texture2D" uid="uid://bf85ga57ynn62" path="res://Backgrounds/DiscoBubble/DiscoClub5.png" id="5_y02av"]
+[ext_resource type="Texture2D" uid="uid://sr0xabbm14qr" path="res://Backgrounds/DiscoBubble/DiscoClub6.png" id="6_kfssf"]
+[ext_resource type="Texture2D" uid="uid://bg7la1uo6n1nh" path="res://Backgrounds/DiscoBubble/DiscoClub7.png" id="7_k5fcd"]
+[ext_resource type="Texture2D" uid="uid://23cn8vc1yvxd" path="res://Backgrounds/DiscoBubble/DiscoClub8.png" id="8_sk7hv"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lf1yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s7ce7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dj50t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5an7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y02av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kfssf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k5fcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sk7hv")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 2.0
+}]
