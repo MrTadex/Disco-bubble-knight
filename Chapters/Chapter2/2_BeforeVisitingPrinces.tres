@@ -1,158 +1,91 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=23 format=3 uid="uid://11q88w2s65cp"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=14 format=3 uid="uid://11q88w2s65cp"]
 
-[ext_resource type="AudioStream" uid="uid://gd66o6vbwmf4" path="res://Music/sexy thing.mp3" id="1_p0ir4"]
-[ext_resource type="SpriteFrames" uid="uid://cvuq2nvvr5g7j" path="res://Backgrounds/DiscoBubble.tres" id="2_2vpty"]
 [ext_resource type="Script" path="res://DialogueSystem/Scripts/LineData.gd" id="3_0s1wc"]
 [ext_resource type="Resource" uid="uid://v14c8rjgawhm" path="res://Characters/Froggo.tres" id="4_v5gkk"]
 [ext_resource type="Resource" uid="uid://bnetvik1uh7xc" path="res://Characters/Bubbles.tres" id="5_arn6k"]
 [ext_resource type="Script" path="res://DialogueSystem/Scripts/DialogueData.gd" id="6_ub174"]
 
-[sub_resource type="Resource" id="Resource_pa3je"]
+[sub_resource type="Resource" id="Resource_i0tt7"]
 script = ExtResource("3_0s1wc")
 Character = ExtResource("4_v5gkk")
 Location = "LEFT"
-Line = "Look at that beauty over there!"
-Emotion = 6
-LineDuration = 3.0
-NextLine = 5.0
+Line = " I haven't seen her for a while, I should go visit her."
+Emotion = 2
+LineDuration = 5.0
+NextLine = 6.0
 
-[sub_resource type="Resource" id="Resource_l58q0"]
+[sub_resource type="Resource" id="Resource_64hol"]
 script = ExtResource("3_0s1wc")
 Character = ExtResource("4_v5gkk")
 Location = "LEFT"
-Line = "Let me shoot my shot..."
+Line = "I wonder what her house looks like?"
 Emotion = 6
-LineDuration = 3.0
+LineDuration = 4.0
 NextLine = 5.0
 
-[sub_resource type="Resource" id="Resource_rx6xw"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("4_v5gkk")
-Location = "LEFT"
-Line = "*Dances to her*"
-Emotion = 6
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_8ilqy"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("4_v5gkk")
-Location = "LEFT"
-Line = "Hey there, pretty!"
-Emotion = 6
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_2ew0r"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("4_v5gkk")
-Location = "LEFT"
-Line = "You caught my eye."
-Emotion = 6
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_e0gh2"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("4_v5gkk")
-Location = "LEFT"
-Line = "You sparkle like a diamond under a spotlight!"
-Emotion = 6
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_0poru"]
+[sub_resource type="Resource" id="Resource_jc60p"]
 script = ExtResource("3_0s1wc")
 Character = ExtResource("5_arn6k")
-Location = "RIGHT"
-Line = "*Giggles*"
+Location = "LEFT"
+Line = "Or if she has a tiny little pet fish or worm or frog."
+Emotion = 6
+LineDuration = 6.0
+NextLine = 7.0
+
+[sub_resource type="Resource" id="Resource_cf7xx"]
+script = ExtResource("3_0s1wc")
+Character = ExtResource("4_v5gkk")
+Location = "LEFT"
+Line = "What's her family like?"
+Emotion = 0
+LineDuration = 4.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_ndwxw"]
+script = ExtResource("3_0s1wc")
+Character = ExtResource("4_v5gkk")
+Location = "LEFT"
+Line = "What colour's her favourite?"
+Emotion = 6
+LineDuration = 4.0
+NextLine = 5.0
+
+[sub_resource type="Resource" id="Resource_qvhnh"]
+script = ExtResource("3_0s1wc")
+Character = ExtResource("4_v5gkk")
+Location = "LEFT"
+Line = "Oh, I'm already here!"
 Emotion = 4
-LineDuration = 3.0
+LineDuration = 4.0
 NextLine = 5.0
 
-[sub_resource type="Resource" id="Resource_2btmb"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("5_arn6k")
-Location = "RIGHT"
-Line = "Why, thank you!"
-Emotion = 0
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_gq6kv"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("5_arn6k")
-Location = "RIGHT"
-Line = "My name is Bubbles."
-Emotion = 0
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_q5ioh"]
+[sub_resource type="Resource" id="Resource_4057g"]
 script = ExtResource("3_0s1wc")
 Character = ExtResource("4_v5gkk")
 Location = "LEFT"
-Line = "That's so cute!"
+Line = "Should I knock? Do I call her?"
 Emotion = 0
-LineDuration = 3.0
+LineDuration = 4.0
 NextLine = 5.0
 
-[sub_resource type="Resource" id="Resource_in48k"]
+[sub_resource type="Resource" id="Resource_sy5x0"]
 script = ExtResource("3_0s1wc")
 Character = ExtResource("4_v5gkk")
 Location = "LEFT"
-Line = "It's the same as the name of this disco."
+Line = "Do I throw a rock at her window?"
 Emotion = 0
-LineDuration = 3.0
+LineDuration = 4.0
 NextLine = 5.0
 
-[sub_resource type="Resource" id="Resource_xwgrq"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("5_arn6k")
-Location = "RIGHT"
-Line = "What's your name?"
-Emotion = 0
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_jug4g"]
+[sub_resource type="Resource" id="Resource_kyr0x"]
 script = ExtResource("3_0s1wc")
 Character = ExtResource("4_v5gkk")
 Location = "LEFT"
-Line = "Everyone calls me Froggo, but you can call me tonight."
-Emotion = 6
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_xdrtn"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("5_arn6k")
-Location = "RIGHT"
-Line = "How about we just dance for now?"
-Emotion = 5
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_dbm4d"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("4_v5gkk")
-Location = "LEFT"
-Line = "Yes, love the way your brain works."
-Emotion = 6
-LineDuration = 3.0
-NextLine = 5.0
-
-[sub_resource type="Resource" id="Resource_rkfmb"]
-script = ExtResource("3_0s1wc")
-Character = ExtResource("4_v5gkk")
-Location = "LEFT"
-Line = "Let's dance!"
-Emotion = 0
-LineDuration = 3.0
-NextLine = 5.0
+Line = "Am I thinking too much or am I not thinking enough?"
+Emotion = 4
+LineDuration = 7.0
+NextLine = 8.0
 
 [resource]
 script = ExtResource("6_ub174")
-Background = ExtResource("2_2vpty")
-Audio = ExtResource("1_p0ir4")
-Lines = Array[ExtResource("3_0s1wc")]([SubResource("Resource_pa3je"), SubResource("Resource_l58q0"), SubResource("Resource_rx6xw"), SubResource("Resource_8ilqy"), SubResource("Resource_2ew0r"), SubResource("Resource_e0gh2"), SubResource("Resource_0poru"), SubResource("Resource_2btmb"), SubResource("Resource_gq6kv"), SubResource("Resource_q5ioh"), SubResource("Resource_in48k"), SubResource("Resource_xwgrq"), SubResource("Resource_jug4g"), SubResource("Resource_xdrtn"), SubResource("Resource_dbm4d"), SubResource("Resource_rkfmb")])
+Lines = Array[ExtResource("3_0s1wc")]([SubResource("Resource_i0tt7"), SubResource("Resource_64hol"), SubResource("Resource_jc60p"), SubResource("Resource_cf7xx"), SubResource("Resource_ndwxw"), SubResource("Resource_qvhnh"), SubResource("Resource_4057g"), SubResource("Resource_sy5x0"), SubResource("Resource_kyr0x")])

@@ -9,8 +9,8 @@ script = ExtResource("2_oi2gs")
 Location = "LEFT"
 Line = "8 Hours later..."
 Emotion = 0
-LineDuration = 4.0
-NextLine = 5.0
+LineDuration = 3.0
+NextLine = 4.0
 
 [resource]
 script = ExtResource("3_telig")
