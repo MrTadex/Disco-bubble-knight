@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjxmhp4ejtq6q"]
+
+[ext_resource type="Script" path="res://Managers/GameManager.gd" id="1_dtohn"]
+[ext_resource type="Script" path="res://Managers/GameStates/StateBase.gd" id="2_yfkwn"]
+[ext_resource type="Resource" uid="uid://cdvpj374pgldb" path="res://Chapters/Chapter2/1_Narator.tres" id="3_0qst6"]
+[ext_resource type="Script" path="res://Managers/GameStates/DialogueState.gd" id="4_trogo"]
+[ext_resource type="PackedScene" uid="uid://bxn7snwc84yn2" path="res://DialogueSystem/UI/DialoguePanel.tscn" id="8_xka6v"]
+
+[sub_resource type="Resource" id="Resource_0pcw3"]
+script = ExtResource("4_trogo")
+Dialogue = ExtResource("3_0qst6")
+
+[node name="Chapter2" type="Node2D"]
+script = ExtResource("1_dtohn")
+_flow = Array[ExtResource("2_yfkwn")]([SubResource("Resource_0pcw3")])
+
+[node name="DialoguePanel" parent="." instance=ExtResource("8_xka6v")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="DialogueEnd" from="DialoguePanel" to="." method="StartNextState"]

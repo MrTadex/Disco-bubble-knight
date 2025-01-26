@@ -38,27 +38,33 @@ func GetNextLine() -> void:
 		_dialogueLine.visible_ratio = 0
 		_dialogueLine.text = _currentLine.Line
 		
-		_nameBubble.SetSpeaker(_currentLine.Character)
-		
-		var spritePath = GetEmotion(_currentLine.Character, _currentLine.Emotion)
-		match(_currentLine.Location):
-			"LEFT":
-				if(spritePath != ""):
-					_mainSpeaker.texture = load(spritePath)
-					_mainSpeaker.visible = true
-				else:
-					_mainSpeaker.visible = false
-				_speaker.visible = false
-			"RIGHT":
-				if(spritePath != ""):
-					_speaker.texture = load(spritePath)
-					_speaker.visible = true
-				else:
+		if _currentLine.Character == null:
+			_nameBubble.visible = false
+			_mainSpeaker.visible = false
+			_speaker.visible = false
+			
+		else:
+			_nameBubble.SetSpeaker(_currentLine.Character)
+				
+			var spritePath = GetEmotion(_currentLine.Character, _currentLine.Emotion)
+			match(_currentLine.Location):
+				"LEFT":
+					if(spritePath != ""):
+						_mainSpeaker.texture = load(spritePath)
+						_mainSpeaker.visible = true
+					else:
+						_mainSpeaker.visible = false
 					_speaker.visible = false
-				_mainSpeaker.visible = false
-			_:
-				_mainSpeaker.visible = false
-				_speaker.visible = false
+				"RIGHT":
+					if(spritePath != ""):
+						_speaker.texture = load(spritePath)
+						_speaker.visible = true
+					else:
+						_speaker.visible = false
+					_mainSpeaker.visible = false
+				_:
+					_mainSpeaker.visible = false
+					_speaker.visible = false
 		
 		_lineTimer.start(_currentLine.NextLine)
 		
