@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ducsvy73qqat8"]
+[gd_scene load_steps=2 format=3 uid="uid://cvbu2tv2t11ga"]
 
-[ext_resource type="Script" path="res://Scenes/Scripts/Options.gd" id="1_7ctv2"]
+[sub_resource type="GDScript" id="GDScript_2y72v"]
+script/source = "extends Control
+
+
+
+func _on_volume_value_changed(value: float) -> void:
+	pass # Replace with function body.
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file('res://Scenes/Menu.tscn')
+"
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -9,21 +20,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7ctv2")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Back"
-
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+script = SubResource("GDScript_2y72v")
