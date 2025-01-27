@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Signals="*res://Global/Objects/Signals.tscn"
 InputManager="*res://Managers/InputManager.gd"
-MusicManager="*res://Managers/MusicManager.gd"
+Conductor="*res://DancingSystem/UI/Conductor.tscn"
 
 [display]
 

@@ -2,7 +2,7 @@ extends Node
 
 # Bounds
 @onready var _dialoguePanel = %DialoguePanel
-# add dance object
+@onready var _danceGame = %Game
 
 # Variables
 @export var _flow:Array[StateBase] # add class for triggers
@@ -20,7 +20,7 @@ func StartNextState() -> void:
 		_currentState = _flow[_flowIndex]
 		
 		if _currentState is DialogueState:
-			# hide dance scene
+			_danceGame.visible = false
 			
 			var diaState = _currentState as DialogueState # cast into Dialogue State
 			
@@ -30,9 +30,10 @@ func StartNextState() -> void:
 		elif _currentState is DancingState:
 			_dialoguePanel.visible = false
 			
-			var dancingState = _currentState as DancingState # cast into Dialogue State
+			var dancingState = _currentState as DancingState
 			
-			# add what have to be called
+			_danceGame.visible = true
+			_danceGame.StartGame(dancingState.Data)
 			pass
 		
 	else:

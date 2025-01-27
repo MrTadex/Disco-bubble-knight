@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://7oe88i0oda1p"]
+
+[ext_resource type="Texture2D" uid="uid://cypwwdt02ioq3" path="res://DancingSystem/UI/Sprites/Frog_arrow_down_falling.png" id="1_737gk"]
+[ext_resource type="Script" path="res://DancingSystem/UI/Arrows/Arrow.gd" id="2_d5827"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkl2k"]
+size = Vector2(100, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13113"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3r15"]
+size = Vector2(100, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3qfs"]
+size = Vector2(100, 5000)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lyt4w"]
+size = Vector2(100, 5000)
+
+[node name="Arrow" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_737gk")
+script = ExtResource("2_d5827")
+
+[node name="GreatArea" type="Area2D" parent="."]
+position = Vector2(0, -150)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreatArea"]
+shape = SubResource("RectangleShape2D_jkl2k")
+
+[node name="ExcelentArea" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExcelentArea"]
+shape = SubResource("RectangleShape2D_13113")
+
+[node name="GoodArea" type="Area2D" parent="."]
+position = Vector2(0, 150)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
+shape = SubResource("RectangleShape2D_s3r15")
+
+[node name="MissArea" type="Area2D" parent="."]
+position = Vector2(0, 2500)
+scale = Vector2(1, 1)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissArea"]
+shape = SubResource("RectangleShape2D_a3qfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="MissArea/CollisionShape2D"]
+texture = SubResource("PlaceholderTexture2D_lyt4w")

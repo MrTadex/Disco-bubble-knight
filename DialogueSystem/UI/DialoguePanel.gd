@@ -18,14 +18,11 @@ var _lineTween : Tween
 #Signal
 signal DialogueEnd
 
-func _ready() -> void:
-	InputManager.SkipLine.connect(Skip)
-
 func StartDialogue(dialogue:DialogueData) -> void:
 	_dialogue = dialogue
 	_background.sprite_frames = _dialogue.Background
 	_background.play("Default")
-	MusicManager.PlaySong(_dialogue.Audio)
+	Conductor.Setup(_dialogue.Audio)
 	
 	_lineIndex = -1
 	GetNextLine()
@@ -74,6 +71,8 @@ func GetNextLine() -> void:
 	else:
 		# End of Dialogue
 		DialogueEnd.emit()
+		_lineTimer.stop()
+		Reset()
 		pass
 
 func Reset() -> void:
@@ -95,3 +94,9 @@ func GetEmotion(character:CharacterData, emotion:Enums.Emotions) -> String:
 		if(emotion == emotionSprite.Emotion):
 			return emotionSprite.Sprite
 	return ""
+
+func _on_visibility_changed() -> void:
+	if visible:
+		InputManager.SkipLine.connect(Skip)
+	else:
+		InputManager.SkipLine.disconnect(Skip)

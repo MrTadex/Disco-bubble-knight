@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fxkaq6obtujm" path="res://Characters/Froggo/not_impressed.png" id="2_cmt22"]
 [ext_resource type="SpriteFrames" uid="uid://cvuq2nvvr5g7j" path="res://Backgrounds/DiscoBubble.tres" id="2_egjy8"]
 [ext_resource type="Script" path="res://DialogueSystem/UI/NameBubble.gd" id="3_663ly"]
-[ext_resource type="Texture2D" uid="uid://d11tnqsdj6pkp" path="res://DancingSystem/UI/Sprites/UI.png" id="4_0pwtq"]
+[ext_resource type="Texture2D" uid="uid://d11tnqsdj6pkp" path="res://DialogueSystem/UI/Sprites/UI.png" id="4_0pwtq"]
 [ext_resource type="Texture2D" uid="uid://b8yv4jo58e225" path="res://Characters/Froggo/main_character.png" id="6_54q2p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8c4mk"]
@@ -174,4 +174,5 @@ label_settings = SubResource("LabelSettings_i17mf")
 unique_name_in_owner = true
 wait_time = 5.0
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="timeout" from="LineTimer" to="." method="_on_line_timer_timeout"]

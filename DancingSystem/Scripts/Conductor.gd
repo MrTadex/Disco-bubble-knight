@@ -19,12 +19,32 @@ var time_off_beat = 0.0
 signal s_beat(position)
 signal s_measure(position)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	sec_per_beat = 60.0 / bpm
+@export var countBeats = false
 
+func Setup(Audio:AudioStreamMP3, BPM:float = 100, Measures:float = 4, CountBeats:bool = false, BeatOffset:int = 0) -> void:
+	stream = Audio
+	bpm = BPM
+	measures = Measures
+	countBeats = CountBeats
+	
+	Reset()
+	
+	if CountBeats:
+		play_with_beat_offset(BeatOffset)
+	else:
+		play()
+		
+func Reset() -> void:
+	song_position = 0.0
+	song_position_in_beats = 1
+	sec_per_beat = 60.0 / bpm
+	last_reported_beat = 0
+	beats_before_start = 0
+	measure = 1
+	
 func _physics_process(_delta):
-	if playing:
+	
+	if playing and countBeats:
 		song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
 		song_position -= AudioServer.get_output_latency()
 		song_position_in_beats = int(floor(song_position / sec_per_beat)) + beats_before_start
@@ -36,9 +56,8 @@ func _report_beat():
 			measure = 1
 		emit_signal("s_beat", song_position_in_beats)
 		emit_signal("s_measure", measure)
-		print('here')
-		last_reported_beat = song_position_in_beats
 		measure += 1
+	last_reported_beat = song_position_in_beats
 
 func play_with_beat_offset(num):
 	beats_before_start = num
@@ -51,10 +70,10 @@ func closest_beat(nth):
 	return Vector2(closest, time_off_beat)
 
 func play_from_beat(beat, offset):
-	play()
 	seek(beat * sec_per_beat)
 	beats_before_start = offset
 	measure = beat % measures
+	play()
 
 func _on_StartTimer_timeout():
 	song_position_in_beats += 1

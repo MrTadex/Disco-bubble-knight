@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjxmhp4ejtq6q"]
+[gd_scene load_steps=25 format=3 uid="uid://cjxmhp4ejtq6q"]
 
 [ext_resource type="PackedScene" uid="uid://bxn7snwc84yn2" path="res://DialogueSystem/UI/DialoguePanel.tscn" id="1_3ku16"]
 [ext_resource type="Script" path="res://Managers/GameManager.gd" id="1_yo6pd"]
@@ -7,10 +7,61 @@
 [ext_resource type="Script" path="res://Managers/GameStates/DialogueState.gd" id="5_4jymu"]
 [ext_resource type="Resource" uid="uid://dut88u4sa6xg0" path="res://Chapters/Chapter1/2_LoveAtFirstSight.tres" id="5_alv4t"]
 [ext_resource type="Resource" uid="uid://c6m6w4pgcmlcr" path="res://Chapters/Chapter1/3_AfterProm.tres" id="6_bxa0y"]
+[ext_resource type="Script" path="res://DancingSystem/Scripts/Audio.gd" id="7_fkf2t"]
+[ext_resource type="AudioStream" uid="uid://gd66o6vbwmf4" path="res://Music/sexy thing.mp3" id="7_jwwl7"]
+[ext_resource type="Script" path="res://DancingSystem/Scripts/Pattern.gd" id="8_sco5u"]
+[ext_resource type="Script" path="res://Managers/GameStates/DancingState.gd" id="9_aq8dw"]
+[ext_resource type="SpriteFrames" uid="uid://cvuq2nvvr5g7j" path="res://Backgrounds/DiscoBubble.tres" id="9_mrcsa"]
+[ext_resource type="Script" path="res://DancingSystem/Scripts/GameData.gd" id="11_oe5ky"]
+[ext_resource type="PackedScene" uid="uid://diigjuawqu078" path="res://DancingSystem/UI/Game.tscn" id="14_k35dp"]
 
 [sub_resource type="Resource" id="Resource_aj6v2"]
 script = ExtResource("5_4jymu")
 Dialogue = ExtResource("3_uqtwn")
+
+[sub_resource type="Resource" id="Resource_4p70d"]
+script = ExtResource("7_fkf2t")
+Audio = ExtResource("7_jwwl7")
+BMP = 106
+FreeBeats = 2
+
+[sub_resource type="Resource" id="Resource_16p7a"]
+script = ExtResource("8_sco5u")
+Up = true
+Down = false
+Left = false
+Right = false
+
+[sub_resource type="Resource" id="Resource_s55ia"]
+script = ExtResource("8_sco5u")
+Up = false
+Down = true
+Left = false
+Right = false
+
+[sub_resource type="Resource" id="Resource_4545s"]
+script = ExtResource("8_sco5u")
+Up = false
+Down = false
+Left = true
+Right = false
+
+[sub_resource type="Resource" id="Resource_mfjuc"]
+script = ExtResource("8_sco5u")
+Up = false
+Down = false
+Left = false
+Right = true
+
+[sub_resource type="Resource" id="Resource_28jwj"]
+script = ExtResource("11_oe5ky")
+Background = ExtResource("9_mrcsa")
+AudioData = SubResource("Resource_4p70d")
+Patterns = Array[ExtResource("8_sco5u")]([SubResource("Resource_16p7a"), SubResource("Resource_s55ia"), SubResource("Resource_4545s"), SubResource("Resource_mfjuc")])
+
+[sub_resource type="Resource" id="Resource_5lga8"]
+script = ExtResource("9_aq8dw")
+Data = SubResource("Resource_28jwj")
 
 [sub_resource type="Resource" id="Resource_nhlg1"]
 script = ExtResource("5_4jymu")
@@ -22,7 +73,7 @@ Dialogue = ExtResource("6_bxa0y")
 
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_yo6pd")
-_flow = Array[ExtResource("2_vfpbx")]([SubResource("Resource_aj6v2"), SubResource("Resource_nhlg1"), SubResource("Resource_0pcw3")])
+_flow = Array[ExtResource("2_vfpbx")]([SubResource("Resource_aj6v2"), SubResource("Resource_5lga8"), SubResource("Resource_nhlg1"), SubResource("Resource_0pcw3")])
 
 [node name="DialoguePanel" parent="." instance=ExtResource("1_3ku16")]
 unique_name_in_owner = true
@@ -31,5 +82,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Game" parent="." instance=ExtResource("14_k35dp")]
+unique_name_in_owner = true
 
 [connection signal="DialogueEnd" from="DialoguePanel" to="." method="StartNextState"]

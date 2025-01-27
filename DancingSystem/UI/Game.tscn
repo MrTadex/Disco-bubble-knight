@@ -1,15 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://diigjuawqu078"]
+[gd_scene load_steps=10 format=3 uid="uid://diigjuawqu078"]
 
 [ext_resource type="Script" path="res://DancingSystem/Scripts/Game.gd" id="1_rbk7t"]
-[ext_resource type="Texture2D" uid="uid://610upam11jk6" path="res://icon.svg" id="2_o27cg"]
+[ext_resource type="PackedScene" uid="uid://c5nmeg5qlk3vb" path="res://DancingSystem/UI/Arrows/ArrowFalling.tscn" id="2_hsmxd"]
 [ext_resource type="PackedScene" uid="uid://vfm7i2g4lv36" path="res://DancingSystem/UI/Game_ui.tscn" id="3_0opjq"]
+[ext_resource type="SpriteFrames" uid="uid://cvuq2nvvr5g7j" path="res://Backgrounds/DiscoBubble.tres" id="3_4aad8"]
+[ext_resource type="PackedScene" uid="uid://7oe88i0oda1p" path="res://DancingSystem/UI/Arrows/Arrow.tscn" id="4_h1fh1"]
+[ext_resource type="Texture2D" uid="uid://b8ht5q67awfdp" path="res://DancingSystem/UI/Sprites/Frog_arrow_up.png" id="6_vy5f3"]
+[ext_resource type="Texture2D" uid="uid://b0tjd56nyxqx" path="res://DancingSystem/UI/Sprites/Frog_arrow_down.png" id="7_3lw7x"]
+[ext_resource type="Texture2D" uid="uid://trb4s4rsmvsu" path="res://DancingSystem/UI/Sprites/Frog_arrow_left.png" id="8_do533"]
+[ext_resource type="Texture2D" uid="uid://b2rnh6dftai5q" path="res://DancingSystem/UI/Sprites/Frog_arrow_right.png" id="9_ii74g"]
 
 [node name="Game" type="Node2D"]
+position = Vector2(960, 540)
 script = ExtResource("1_rbk7t")
+FallingArrow = ExtResource("2_hsmxd")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_o27cg")
+[node name="Background" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+sprite_frames = ExtResource("3_4aad8")
+animation = &"Default"
 
 [node name="GameUI" parent="." instance=ExtResource("3_0opjq")]
+
+[node name="UpArrow" parent="." instance=ExtResource("4_h1fh1")]
+position = Vector2(-100, -450)
+texture = ExtResource("6_vy5f3")
+
+[node name="DownArrow" parent="." instance=ExtResource("4_h1fh1")]
+position = Vector2(100, -450)
+texture = ExtResource("7_3lw7x")
+_input = 1
+
+[node name="LeftArrow" parent="." instance=ExtResource("4_h1fh1")]
+position = Vector2(-300, -450)
+texture = ExtResource("8_do533")
+_input = 2
+
+[node name="RightArrow" parent="." instance=ExtResource("4_h1fh1")]
+position = Vector2(300, -450)
+texture = ExtResource("9_ii74g")
+_input = 3

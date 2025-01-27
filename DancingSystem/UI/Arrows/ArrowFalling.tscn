@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5nmeg5qlk3vb"]
+
+[ext_resource type="Texture2D" uid="uid://dqj2bmkij4tab" path="res://DancingSystem/UI/Sprites/Frog_arrow_up_falling.png" id="1_jboga"]
+[ext_resource type="Texture2D" uid="uid://cypwwdt02ioq3" path="res://DancingSystem/UI/Sprites/Frog_arrow_down_falling.png" id="1_o1dcu"]
+[ext_resource type="Script" path="res://DancingSystem/UI/Arrows/ArrowFalling.gd" id="2_c4psh"]
+[ext_resource type="Texture2D" uid="uid://do1bueow7dfqb" path="res://DancingSystem/UI/Sprites/Frog_arrow_left_falling.png" id="3_wgtt0"]
+[ext_resource type="Texture2D" uid="uid://bjvfeixsdl6bp" path="res://DancingSystem/UI/Sprites/Frog_arrow_right_falling.png" id="4_5lmfe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5c0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jboga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_o1dcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wgtt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5lmfe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13113"]
+size = Vector2(100, 100)
+
+[node name="ArrowFalling" type="AnimatedSprite2D"]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_k5c0h")
+speed_scale = 0.0
+script = ExtResource("2_c4psh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_13113")
